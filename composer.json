@@ -1,0 +1,34 @@
+{
+    "name": "elcweb/graylog-bundle",
+    "type": "symfony-bundle",
+    "description": "Graylog Monolog connector",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Etienne Lachance",
+            "email": "el@elcweb.ca"
+        }
+    ],
+    "require": {
+        "php": ">=5.5",
+        "symfony/symfony": ">=2.7",
+        "mlehner/gelf-php": "^1.1"
+    },
+    "autoload": {
+        "psr-4": { "Elcweb\\GraylogBundle\\": "src" }
+    },
+    "autoload-dev": {
+        "psr-4": { "Elcweb\\GraylogBundle\\": "tests" }
+    },
+    "minimum-stability": "stable",
+    "require-dev": {
+        "phpunit/phpunit": "^5.5",
+        "jakub-onderka/php-parallel-lint": "^0.9"
+    },
+    "scripts": {
+        "test": [
+            "parallel-lint . --exclude vendor",
+            "phpunit"
+        ]
+    }
+}

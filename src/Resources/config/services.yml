@@ -1,0 +1,20 @@
+services:
+    elcweb.graylog.gelf.publisher:
+        class: Gelf\MessagePublisher
+        arguments: ['%elcweb_graylog.hostname%', '%elcweb_graylog.port%']
+
+    elcweb.graylog.monolog.gelf_handler:
+        class: Monolog\Handler\GelfHandler
+        arguments: ['@elcweb.graylog.gelf.publisher']
+
+    elcweb.graylog.monolog.processor.web_processor:
+         class: Monolog\Processor\WebProcessor
+         tags:
+             - { name: monolog.processor, method: __invoke }
+
+    elcweb.graylog.monolog.processor.environment:
+         class: Elcweb\GraylogBundle\Monolog\Processor\EnvironmentProcessor
+         arguments:
+            - '%kernel.environment%'
+         tags:
+             - { name: monolog.processor, method: invoke }
