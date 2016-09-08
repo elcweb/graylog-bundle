@@ -12,6 +12,25 @@ Install the latest version with
 $ composer require elcweb/graylog-bundle
 ```
 
+Enable the bundle
+-----------------
+Enable the bundle in the kernel:
+
+``` php
+<?php
+// app/AppKernel.php
+
+public function registerBundles()
+{
+    $bundles = array(
+        // ...
+        new Elcweb\GraylogBundle\ElcwebGraylogBundle(),
+    );
+}
+```
+
+Configuration
+-------------
 Add to your config.yml
 ```yaml
 parameters:
