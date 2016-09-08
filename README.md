@@ -34,9 +34,8 @@ Configuration
 Add to your config.yml
 ```yaml
 parameters:
-    elcweb_graylog:
-        hostname: 127.0.0.1
-        port: 12201
+    elcweb_graylog.hostname: 127.0.0.1
+    elcweb_graylog.port: 12201
 
 monolog:
     handlers:
