@@ -18,6 +18,7 @@ parameters:
     elcweb_graylog:
         hostname: 127.0.0.1
         port: 12201
+
 monolog:
     handlers:
         gelf:
